@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Financeira Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Gestão Financeira 💰</h1>
+    </header>
+    <main>
+            <!-- Resumo -->
+        <section id="resumo">
+            <div class="card receita">
+                <h3>Receitas</h3>
+                <p id="resumo-receitas">R$ 0,00</p>
+            </div>
+            <div class="card despesa">
+                <h3>Despesas</h3>
+                <p id="resumo-despesas">R$ 0,00</p>
+            </div>
+            <div class="card saldo">
+                <h3>Saldo</h3>
+                <p id="resumo-saldo">R$ 0,00</p>
+            </div>
+        </section>
+
+        <!-- Formulário de Registro -->
+        <section id="gestao">
+            <h2>Adicionar Transação</h2>
+            <form id="form-financas">
+                <input type="text" id="descricao" placeholder="Descrição" required>
+                <input type="number" id="valor" placeholder="Valor (R$)" required>
+                <input type="date" id="data" required>
+                <select id="categoria">
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+                <select id="status">
+                    <option value="pago">Pago</option>
+                    <option value="pendente">Pendente</option>
+                </select>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <!-- Tabela de Transações -->
+        <section id="tabela-transacoes">
+            <h2>Transações</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Botão de Relatório -->
+        <button id="gerar-relatorio">Gerar Relatório (PDF)</button>
+    </main>
+    <script src="libs/jsPDF.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
